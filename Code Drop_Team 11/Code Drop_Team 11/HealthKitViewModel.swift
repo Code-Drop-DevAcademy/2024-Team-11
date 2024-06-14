@@ -12,6 +12,8 @@ class HealthKitViewModel: ObservableObject {
     
     private var healthStore = HKHealthStore()
     private var healthKitManager = HealthKitManager()
+    private var notificationManager = NotificationManager()
+    
     @Published var userStepCount = ""
     @Published var isAuthorized = false
     @Published var needToStand = false
@@ -91,8 +93,11 @@ class HealthKitViewModel: ObservableObject {
     
     func checkNeedToStand(){
         isBeenOneHour(){ result in
-            DispatchQueue.main.async{
+            DispatchQueue.main.async{ [self] in
                 self.needToStand = result
+                if result {
+                    notificationManager.moveNotification()
+                }
             }
         }
     }

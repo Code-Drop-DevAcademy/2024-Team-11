@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct Code_Drop_Team_11App: App {
+    var vm = HealthKitViewModel()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(vm)
         }
     }
 }

@@ -6,16 +6,48 @@
 //
 
 import SwiftUI
+import HealthKit
 
 struct ContentView: View {
+    @EnvironmentObject var vm: HealthKitViewModel
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            if vm.isAuthorized {
+                VStack {
+                    Text("Today's Step Count")
+                        .font(.title3)
+                    
+                    Text("\(vm.userStepCount)")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                }
+            } else {
+                VStack {
+                    Text("Please Authorize Health!")
+                        .font(.title3)
+                    
+                    Button {
+                        vm.healthRequest()
+                    } label: {
+                        Text("Authorize HealthKit")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                    }
+                    .frame(width: 320, height: 55)
+                    .background(Color(.orange))
+                    .cornerRadius(10)
+                }
+            }
+            
         }
         .padding()
+        .onChange(of: vm.isAuthorized){
+            print("Auth: \(vm.isAuthorized)")
+        }
+        .onAppear {
+            vm.readStepsTakenToday()
+        }
     }
 }
 

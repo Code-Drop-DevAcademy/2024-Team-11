@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct Code_Drop_Team_11App: App {
@@ -15,6 +16,7 @@ struct Code_Drop_Team_11App: App {
         WindowGroup {
             ContentView()
                 .environmentObject(vm)
-        }
+            
+        }.modelContainer(for: News.self)
     }
 }

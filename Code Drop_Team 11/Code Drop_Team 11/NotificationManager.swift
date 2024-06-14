@@ -7,13 +7,16 @@
 
 import SwiftUI
 import UserNotifications
+import SwiftData
 
 class NotificationManager: ObservableObject {
     static let instance = NotificationManager()
     
+    @Environment(\.modelContext) private var modelContext
     @Published var authorizationStatus: UNAuthorizationStatus = .notDetermined
     ///데이터파일 대신 publish 배열로 만들었어요
-    @Published var todayNews: [News] = []
+//    @Published var todayNews: [News] = []
+    @Query var todayNews: [News]
     
     
     init() {
@@ -53,7 +56,7 @@ class NotificationManager: ObservableObject {
                     } else {
                         print("Notification scheduled successfully")
                         DispatchQueue.main.async {
-                            self.todayNews.append(randomNews)
+                            self.modelContext.insert(randomNews)
                         }
                     }
                 }

@@ -6,12 +6,25 @@
 //
 
 import Foundation
+import SwiftData
 
-struct News: Hashable, Equatable {
+@Model
+class News: Hashable, Equatable {
 //    var id: ObjectIdentifier
+    var id = UUID()
     var title: String
     var text: String
     var link: String
+    
+    init(title: String, text: String, link: String) {
+        self.title = title
+        self.text = text
+        self.link = link
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
     
     static func == (lhs: News, rhs: News) -> Bool {
         return lhs.title == rhs.title &&

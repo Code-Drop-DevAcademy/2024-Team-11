@@ -17,6 +17,7 @@ class HealthKitViewModel: ObservableObject {
     @Published var userStepCount = ""
     @Published var isAuthorized = false
     @Published var needToStand = false
+    @Published var sentMoveNotification = false
     
     init() {
         changeAuthorizationStatus()
@@ -95,8 +96,13 @@ class HealthKitViewModel: ObservableObject {
         isBeenOneHour(){ result in
             DispatchQueue.main.async{ [self] in
                 self.needToStand = result
-                if result {
+                print("result: \(result)")
+                print("notif: \(sentMoveNotification)")
+                if result && !sentMoveNotification{
                     notificationManager.moveNotification()
+                    sentMoveNotification = true
+                }else if !result{
+                    sentMoveNotification = false
                 }
             }
         }

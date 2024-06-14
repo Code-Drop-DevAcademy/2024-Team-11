@@ -13,54 +13,31 @@ struct ContentView: View {
     @EnvironmentObject var vm: HealthKitViewModel
     @State var seconds = Date()
     @State var isTime = false
+    @StateObject private var notificationManager = NotificationManager.instance
     
     var body: some View {
         VStack {
-            if vm.isAuthorized {
-                VStack {
-                    Text("Today's Step Count")
-                        .font(.title3)
-                    
-//                    Text("\(vm.userStepCount)")
-//                        .font(.largeTitle)
-//                        .fontWeight(.bold)
-                    Text("\(seconds) seconds. Steps: \(vm.needToStand)")
-                }
-            } else {
-                VStack {
-                    Text("Please Authorize Health!")
-                        .font(.title3)
-                    
-                    Button {
-                        vm.healthRequest()
-                    } label: {
-                        Text("Authorize HealthKit")
-                            .font(.headline)
-                            .foregroundColor(.white)
-                    }
-                    .frame(width: 320, height: 55)
-                    .background(Color(.orange))
+            Button(action: {
+                notificationManager.newsNotification()
+            }, label: {
+                Text("10초 후 알림 보내기")
+                    .padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
                     .cornerRadius(10)
-                }
-            }
-            
+            })
+        }
+        .onAppear {
+            notificationManager.requestAuthorization()
+            vm.readStepsTakenToday()
         }
         .onReceive(timer, perform: { time in
             seconds = time
             vm.checkNeedToStand()
-//            isTime = vm.needToStand
-            
         })
         .padding()
         .onChange(of: vm.isAuthorized){
             print("Auth: \(vm.isAuthorized)")
         }
-        .onAppear {
-            vm.readStepsTakenToday()
-        }
     }
-}
-
-#Preview {
-    ContentView()
 }

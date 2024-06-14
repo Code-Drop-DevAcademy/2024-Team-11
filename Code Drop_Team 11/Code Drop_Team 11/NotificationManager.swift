@@ -39,7 +39,7 @@ class NotificationManager: ObservableObject {
             if !todayNews.contains(randomNews) {
                 ///알림의 내용을 설정할 수 있는 클래스를 선언한 변수
                 let content = UNMutableNotificationContent()
-                content.title = randomNews.title
+                content.title = "return 인사이트💡"
                 content.body = randomNews.text
                 content.sound = UNNotificationSound.default
                 
@@ -71,7 +71,7 @@ class NotificationManager: ObservableObject {
         content.body = "2시간 동안 열심히 일했어요! 이제 일어나서 걸어볼까요?"
         content.sound = UNNotificationSound.default
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false) //1초 뒤에 알림 울림
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         
         UNUserNotificationCenter.current().add(request) { error in

@@ -9,7 +9,10 @@ import SwiftUI
 import HealthKit
 
 struct ContentView: View {
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @EnvironmentObject var vm: HealthKitViewModel
+    @State var seconds = Date()
+    @State var isTime = false
     
     var body: some View {
         VStack {
@@ -18,9 +21,10 @@ struct ContentView: View {
                     Text("Today's Step Count")
                         .font(.title3)
                     
-                    Text("\(vm.userStepCount)")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
+//                    Text("\(vm.userStepCount)")
+//                        .font(.largeTitle)
+//                        .fontWeight(.bold)
+                    Text("\(seconds) seconds. Steps: \(vm.needToStand)")
                 }
             } else {
                 VStack {
@@ -41,6 +45,12 @@ struct ContentView: View {
             }
             
         }
+        .onReceive(timer, perform: { time in
+            seconds = time
+            vm.checkNeedToStand()
+//            isTime = vm.needToStand
+            
+        })
         .padding()
         .onChange(of: vm.isAuthorized){
             print("Auth: \(vm.isAuthorized)")

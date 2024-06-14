@@ -14,6 +14,7 @@ class HealthKitViewModel: ObservableObject {
     private var healthKitManager = HealthKitManager()
     @Published var userStepCount = ""
     @Published var isAuthorized = false
+    @Published var needToStand = false
     
     init() {
         changeAuthorizationStatus()
@@ -73,21 +74,26 @@ class HealthKitViewModel: ObservableObject {
         }
     }
     
-    func isBeenOneHour() -> Bool {
-        guard let startDate = Calendar.current.date(byAdding: .hour, value: -1, to: Date()) else {return false}
-        var startStep:Double = 0
-        var nowStep:Double = 0
+    func isBeenOneHour(completion: @escaping (Bool) -> Void) {
+        guard let startDate = Calendar.current.date(byAdding: .hour, value: -1, to: Date()) else {
+            completion(false)
+            return
+        }
         healthKitManager.readStepCount(forToday: startDate, healthStore: healthStore) { step in
-            startStep = step
+            let startStep = step
+            if startStep < 10 {
+                completion(true)
+            } else {
+                completion(false)
+            }
         }
-        healthKitManager.readStepCount(forToday: Date(), healthStore: healthStore) { step in
-            nowStep = step
-        }
-        
-        if (nowStep - startStep) < 10{
-            return true
-        }else{
-            return false
+    }
+    
+    func checkNeedToStand(){
+        isBeenOneHour(){ result in
+            DispatchQueue.main.async{
+                self.needToStand = result
+            }
         }
     }
     

@@ -26,9 +26,7 @@ class HealthKitManager {
     func readStepCount(forToday: Date, healthStore: HKHealthStore, completion: @escaping (Double) -> Void) {
         guard let stepQuantityType = HKQuantityType.quantityType(forIdentifier: .stepCount) else { return }
         let now = Date()
-        let startOfDay = Calendar.current.startOfDay(for: now)
-        
-        let predicate = HKQuery.predicateForSamples(withStart: startOfDay, end: now, options: .strictStartDate)
+        let predicate = HKQuery.predicateForSamples(withStart: forToday, end: now, options: .strictStartDate)
         
         let query = HKStatisticsQuery(quantityType: stepQuantityType, quantitySamplePredicate: predicate, options: .cumulativeSum) { _, result, error in
             

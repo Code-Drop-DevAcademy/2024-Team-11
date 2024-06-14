@@ -68,7 +68,7 @@ class NotificationManager: ObservableObject {
         content.body = "2시간 동안 열심히 일했어요! 이제 일어나서 걸어볼까요?"
         content.sound = UNNotificationSound.default
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false) //1초 뒤에 알림 울림
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         
         UNUserNotificationCenter.current().add(request) { error in

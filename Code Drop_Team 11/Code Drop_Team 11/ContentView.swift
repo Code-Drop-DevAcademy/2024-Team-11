@@ -28,6 +28,7 @@ struct ContentView: View {
             })
         }
         .onAppear {
+            vm.healthRequest()
             notificationManager.requestAuthorization()
             vm.readStepsTakenToday()
         }

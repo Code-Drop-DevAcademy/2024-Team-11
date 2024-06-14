@@ -17,6 +17,7 @@ class HealthKitViewModel: ObservableObject {
     @Published var userStepCount = ""
     @Published var isAuthorized = false
     @Published var needToStand = false
+    @Published var sentMoveNotification = false
     
     init() {
         changeAuthorizationStatus()
@@ -77,7 +78,7 @@ class HealthKitViewModel: ObservableObject {
     }
     
     func isBeenOneHour(completion: @escaping (Bool) -> Void) {
-        guard let startDate = Calendar.current.date(byAdding: .hour, value: -1, to: Date()) else {
+        guard let startDate = Calendar.current.date(byAdding: .minute, value: -1, to: Date()) else {
             completion(false)
             return
         }
@@ -95,8 +96,13 @@ class HealthKitViewModel: ObservableObject {
         isBeenOneHour(){ result in
             DispatchQueue.main.async{ [self] in
                 self.needToStand = result
-                if result {
+                if result && !sentMoveNotification{
                     notificationManager.moveNotification()
+                    sentMoveNotification = true
+                    print("Send: \(sentMoveNotification)")
+                }else if !result{
+                    sentMoveNotification = false
+                    print("refresh: \(sentMoveNotification)")
                 }
             }
         }

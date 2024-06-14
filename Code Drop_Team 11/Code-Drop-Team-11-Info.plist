@@ -4,9 +4,5 @@
 <dict>
 	<key></key>
 	<string></string>
-	<key>NSHealthUpdateUsageDescription</key>
-	<string>To read steps data </string>
-	<key>NSHealthShareUsageDescription</key>
-	<string>To read steps data </string>
 </dict>
 </plist>

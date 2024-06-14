@@ -37,7 +37,7 @@ class NotificationManager: ObservableObject {
             if !todayNews.contains(randomNews) {
                 ///알림의 내용을 설정할 수 있는 클래스를 선언한 변수
                 let content = UNMutableNotificationContent()
-                content.title = randomNews.title
+                content.title = "return 인사이트💡"
                 content.body = randomNews.text
                 content.sound = UNNotificationSound.default
                 

@@ -7,6 +7,7 @@
 
 import Foundation
 
+@Model
 class News: Hashable, Equatable {
 //    var id: ObjectIdentifier
     

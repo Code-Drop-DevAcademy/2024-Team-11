@@ -14,7 +14,7 @@ struct Code_Drop_Team_11App: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
                 .environmentObject(vm)
         }.modelContainer(for: News.self)
     }

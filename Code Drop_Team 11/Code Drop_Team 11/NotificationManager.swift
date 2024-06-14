@@ -7,8 +7,10 @@
 
 import SwiftUI
 import UserNotifications
+import SwiftData
 
 class NotificationManager: ObservableObject {
+    @Environment(\.modelContext) private var modelContext
     static let instance = NotificationManager()
     
     @Published var authorizationStatus: UNAuthorizationStatus = .notDetermined
@@ -53,7 +55,8 @@ class NotificationManager: ObservableObject {
                     } else {
                         print("Notification scheduled successfully")
                         DispatchQueue.main.async {
-                            self.todayNews.append(randomNews)
+//                            self.todayNews.append(randomNews)
+                            self.modelContext.insert(randomNews)
                         }
                     }
                 }

@@ -29,6 +29,7 @@ struct ContentView: View {
         }
         .onAppear {
             notificationManager.requestAuthorization()
+            vm.healthRequest()
             vm.readStepsTakenToday()
         }
         .onReceive(timer, perform: { time in

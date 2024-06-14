@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftData
 
 @Model
 class News: Hashable, Equatable {

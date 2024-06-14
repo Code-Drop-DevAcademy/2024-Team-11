@@ -8,13 +8,13 @@
 import SwiftUI
 import UserNotifications
 
-import SwiftUI
-import UserNotifications
-
 class NotificationManager: ObservableObject {
     static let instance = NotificationManager()
     
     @Published var authorizationStatus: UNAuthorizationStatus = .notDetermined
+    ///데이터파일 대신 publish 배열로 만들었어요
+    @Published var todayNews: [News] = []
+    
     
     init() {
         requestAuthorization()
@@ -32,26 +32,52 @@ class NotificationManager: ObservableObject {
             }
         }
     }
-    func sendNotification() {
-            ///알림의 내용을 설정할 수 있는 클래스를 선언한 변수
-            let content = UNMutableNotificationContent()
-            content.title = "Scheduled Notification" //title 데이터
-            content.body = "This notification was scheduled to appear after 1 minute." //text 데이터
-            content.sound = UNNotificationSound.default
-            
-            ///알림이 발송될 시간 간격 설정; 60초 후에, 반복은 없이
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: false)
-            ///알림 요청 객체 생성
-            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-            
-            //알림을 시스템에 예약
-            UNUserNotificationCenter.current().add(request) { error in
-                if let error = error {
-                    print("Failed to schedule notification: \(error.localizedDescription)")
-                } else {
-                    print("Notification scheduled successfully")
+    func newsNotification() {
+        if let randomNews = AllNews.randomElement() {
+            if !todayNews.contains(randomNews) {
+                ///알림의 내용을 설정할 수 있는 클래스를 선언한 변수
+                let content = UNMutableNotificationContent()
+                content.title = randomNews.title
+                content.body = randomNews.text
+                content.sound = UNNotificationSound.default
+                
+                ///알림이 발송될 시간 간격 설정; 60초 후에, 반복은 없이
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+                ///알림 요청 객체 생성
+                let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+                
+                //알림을 시스템에 예약
+                UNUserNotificationCenter.current().add(request) { error in
+                    if let error = error {
+                        print("Failed to schedule notification: \(error.localizedDescription)")
+                    } else {
+                        print("Notification scheduled successfully")
+                        DispatchQueue.main.async {
+                            self.todayNews.append(randomNews)
+                        }
+                    }
                 }
             }
+            
         }
+    }
+    
+    func moveNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "일어나세요!"
+        content.body = "2시간 동안 열심히 일했어요! 이제 일어나서 걸어볼까요?"
+        content.sound = UNNotificationSound.default
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false) //1초 뒤에 알림 울림
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request) { error in
+            if let error = error {
+                print("Failed to schedule notification: \(error.localizedDescription)")
+            } else {
+                print("Notification scheduled successfully")
+            }
+        }
+    }
 }
 

@@ -13,10 +13,9 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Button(action: {
-                notificationManager.requestAuthorization()
-                notificationManager.sendNotification()
+                notificationManager.newsNotification()
             }, label: {
-                Text("1분 후 알림 보내기")
+                Text("10초 후 알림 보내기")
                     .padding()
                     .background(Color.blue)
                     .foregroundColor(.white)

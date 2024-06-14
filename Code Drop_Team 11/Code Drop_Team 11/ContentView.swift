@@ -6,8 +6,13 @@
 //
 
 import SwiftUI
+import HealthKit
 
 struct ContentView: View {
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    @EnvironmentObject var vm: HealthKitViewModel
+    @State var seconds = Date()
+    @State var isTime = false
     @StateObject private var notificationManager = NotificationManager.instance
     
     var body: some View {
@@ -24,6 +29,15 @@ struct ContentView: View {
         }
         .onAppear {
             notificationManager.requestAuthorization()
+            vm.readStepsTakenToday()
+        }
+        .onReceive(timer, perform: { time in
+            seconds = time
+            vm.checkNeedToStand()
+        })
+        .padding()
+        .onChange(of: vm.isAuthorized){
+            print("Auth: \(vm.isAuthorized)")
         }
     }
 }

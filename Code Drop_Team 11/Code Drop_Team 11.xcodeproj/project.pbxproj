@@ -14,6 +14,8 @@
 		6B7453192C1CB36C000C2955 /* Code_Drop_Team_11Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7453182C1CB36C000C2955 /* Code_Drop_Team_11Tests.swift */; };
 		6B7453232C1CB36C000C2955 /* Code_Drop_Team_11UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7453222C1CB36C000C2955 /* Code_Drop_Team_11UITests.swift */; };
 		6B7453252C1CB36C000C2955 /* Code_Drop_Team_11UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7453242C1CB36C000C2955 /* Code_Drop_Team_11UITestsLaunchTests.swift */; };
+		6B7453352C1CC7FC000C2955 /* HealthKitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7453342C1CC7FC000C2955 /* HealthKitViewModel.swift */; };
+		6B7453372C1CC816000C2955 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7453362C1CC816000C2955 /* HealthKitManager.swift */; };
 		89937B5C2C1CC06D00ED70E3 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89937B5B2C1CC06D00ED70E3 /* NotificationManager.swift */; };
 		89937B5F2C1CCED800ED70E3 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89937B5E2C1CCED800ED70E3 /* News.swift */; };
 		89937B612C1CCF8000ED70E3 /* AllNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89937B602C1CCF8000ED70E3 /* AllNews.swift */; };
@@ -47,6 +49,10 @@
 		6B74531E2C1CB36C000C2955 /* Code Drop_Team 11UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Code Drop_Team 11UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B7453222C1CB36C000C2955 /* Code_Drop_Team_11UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Code_Drop_Team_11UITests.swift; sourceTree = "<group>"; };
 		6B7453242C1CB36C000C2955 /* Code_Drop_Team_11UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Code_Drop_Team_11UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6B7453332C1CBAFC000C2955 /* Code Drop_Team 11.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Code Drop_Team 11.entitlements"; sourceTree = "<group>"; };
+		6B7453342C1CC7FC000C2955 /* HealthKitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitViewModel.swift; sourceTree = "<group>"; };
+		6B7453362C1CC816000C2955 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
+		6B7453382C1CC90C000C2955 /* Code-Drop-Team-11-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Code-Drop-Team-11-Info.plist"; sourceTree = SOURCE_ROOT; };
 		89937B5B2C1CC06D00ED70E3 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		89937B5E2C1CCED800ED70E3 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		89937B602C1CCF8000ED70E3 /* AllNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNews.swift; sourceTree = "<group>"; };
@@ -100,11 +106,15 @@
 		6B7453062C1CB36B000C2955 /* Code Drop_Team 11 */ = {
 			isa = PBXGroup;
 			children = (
+				6B7453382C1CC90C000C2955 /* Code-Drop-Team-11-Info.plist */,
+				6B7453332C1CBAFC000C2955 /* Code Drop_Team 11.entitlements */,
 				89937B5D2C1CCECA00ED70E3 /* DataModel */,
 				6B7453072C1CB36B000C2955 /* Code_Drop_Team_11App.swift */,
 				6B7453092C1CB36B000C2955 /* ContentView.swift */,
 				6B74530B2C1CB36C000C2955 /* Assets.xcassets */,
 				6B74530D2C1CB36C000C2955 /* Preview Content */,
+				6B7453362C1CC816000C2955 /* HealthKitManager.swift */,
+				6B7453342C1CC7FC000C2955 /* HealthKitViewModel.swift */,
 				89937B5B2C1CC06D00ED70E3 /* NotificationManager.swift */,
 			);
 			path = "Code Drop_Team 11";
@@ -274,6 +284,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B7453352C1CC7FC000C2955 /* HealthKitViewModel.swift in Sources */,
+				6B74530A2C1CB36B000C2955 /* ContentView.swift in Sources */,
+				6B7453372C1CC816000C2955 /* HealthKitManager.swift in Sources */,
 				89937B5C2C1CC06D00ED70E3 /* NotificationManager.swift in Sources */,
 				89937B612C1CCF8000ED70E3 /* AllNews.swift in Sources */,
 				6B74530A2C1CB36B000C2955 /* ContentView.swift in Sources */,
@@ -439,12 +452,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Code Drop_Team 11/Code Drop_Team 11.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Code Drop_Team 11/Preview Content\"";
 				DEVELOPMENT_TEAM = 8D32S9PLZ6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Code-Drop-Team-11-Info.plist";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "To read the number of steps taken";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -468,12 +484,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Code Drop_Team 11/Code Drop_Team 11.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Code Drop_Team 11/Preview Content\"";
 				DEVELOPMENT_TEAM = 8D32S9PLZ6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Code-Drop-Team-11-Info.plist";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "To read the number of steps taken";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

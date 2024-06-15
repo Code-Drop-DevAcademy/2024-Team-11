@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct DetailView: View {
-    var insight: Insight
+    @EnvironmentObject var notificationManager: NotificationManager
+    @EnvironmentObject var vm: HealthKitViewModel
+    
+    var insight: News
     
     var body: some View {
         VStack {
@@ -19,7 +22,7 @@ struct DetailView: View {
             Text(insight.title)
                 .font(.largeTitle)
                 .padding()
-            Text(insight.detail)
+            Text(insight.text)
                 .font(.body)
                 .padding()
             Spacer()
@@ -40,5 +43,5 @@ struct DetailView: View {
 }
 
 #Preview {
-    DetailView()
+    DetailView(insight: News(title: "title", text: "text", link: "link"))
 }

@@ -11,11 +11,16 @@ import SwiftData
 @main
 struct Code_Drop_Team_11App: App {
     var vm = HealthKitViewModel()
+    @StateObject var notificationManager = NotificationManager()
+    @StateObject var router = Router()
     
     var body: some Scene {
         WindowGroup {
             HomeView()
                 .environmentObject(vm)
-        }.modelContainer(for: News.self)
+                .environmentObject(router)
+                .environmentObject(notificationManager)
+            
+        }
     }
 }

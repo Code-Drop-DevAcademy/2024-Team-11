@@ -6,10 +6,8 @@
 //
 
 import Foundation
-import SwiftData
 
-@Model
-class News: Hashable, Equatable {
+class News: Hashable, Equatable, Identifiable {
 //    var id: ObjectIdentifier
     
     var id = UUID()

@@ -11,9 +11,12 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var isShowingDetail = false
+    @EnvironmentObject var router: Router
+    @EnvironmentObject var notificationManager: NotificationManager
+    @EnvironmentObject var vm: HealthKitViewModel
     
     var body: some View {
-        NavigationView {
+        NavigationStack(path: $router.path) {
             VStack {
                 Spacer()
                 Image("Group 9")
@@ -25,19 +28,49 @@ struct HomeView: View {
                 Text("중간에 잠깐 쉬고 걷는 것은 효율에 도움이 돼요.")
                     .foregroundColor(.white)
                 Spacer()
-                Button("시작하기") {
-                    self.isShowingDetail.toggle()
+                HStack{
+                    Button("시작하기") {
+//                        router.backToRoot()
+                        router.push(.listView)
+                    }
+                    .padding()
+                    .foregroundColor(.white)
+                    .background(Color.green)
+                    .cornerRadius(8)
+                    .padding()
+                    .frame(width: 124, height:56)
                 }
-                .padding()
-                .foregroundColor(.white)
-                .background(Color.green)
-                .cornerRadius(8)
-                .padding()
                 
-//                NavigationLink(destination: ListView(), isActive: $isShowingDetail) {
+                
+//                NavigationLink(destination: ListView()
+//                    .environmentObject(notificationManager)
+//                    .environmentObject(router)
+//                               , isActive: $isShowingDetail) {
 //                    EmptyView()
 //                }
             }
+            .navigationDestination(for: Destination.self){ destination in
+                switch destination{
+                case .listView:
+                    ListView()
+                        .environmentObject(notificationManager)
+                        .environmentObject(router)
+                case .endView:
+                    EndView()
+                        .environmentObject(notificationManager)
+                        .environmentObject(router)
+                case .homeView:
+                    HomeView()
+                        .environmentObject(notificationManager)
+                        .environmentObject(router)
+                        .environmentObject(vm)
+                default:
+                    ListView()
+                        .environmentObject(notificationManager)
+                        .environmentObject(router)
+                }
+            }
+
             .background(Color.black)
             .navigationTitle("6월 15일")
             .foregroundColor(.white)

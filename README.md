@@ -9,14 +9,14 @@
 **일하는 도중 잠깐 걸으면 더 생각할 수 있는 인사이트를 보내줘요!**
 
 
- </div>
+## 📝 앱 소개
 
 
 ## :fireworks: Screenshots
-<a href="https://ibb.co/6Nf0fLg"><img src="https://i.ibb.co/9GCHCSs/image.jpg" alt="image" border="0" width=200></a>
-<a href="https://ibb.co/y82T8n4"><img src="https://i.ibb.co/Vv6yvWw/image.jpg" alt="image" border="0" width=200></a>
-<a href="https://ibb.co/K223dfq"><img src="https://i.ibb.co/5rrfmS8/image.jpg" alt="image" border="0" width=200></a>
 <a href="https://ibb.co/nkSz5x6"><img src="https://i.ibb.co/VB82PfJ/image.jpg" alt="image" border="0" width=200></a>
+<a href="https://ibb.co/K223dfq"><img src="https://i.ibb.co/5rrfmS8/image.jpg" alt="image" border="0" width=200></a>
+<a href="https://ibb.co/y82T8n4"><img src="https://i.ibb.co/Vv6yvWw/image.jpg" alt="image" border="0" width=200></a>
+<a href="https://ibb.co/6Nf0fLg"><img src="https://i.ibb.co/9GCHCSs/image.jpg" alt="image" border="0" width=200></a>
 
 
 ## :pushpin: 핵심 기능

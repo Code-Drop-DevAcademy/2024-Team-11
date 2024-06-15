@@ -19,55 +19,57 @@ struct HomeView: View {
         NavigationStack(path: $router.path) {
             VStack {
                 Spacer()
-                Image("Group 9")
+                Image("homeImage")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 150, height: 150)
-                Text("업무를 시작해볼까요?")
-                    .foregroundColor(.white)
-                Text("중간에 잠깐 쉬고 걷는 것은 효율에 도움이 돼요.")
-                    .foregroundColor(.white)
+                VStack(alignment: .leading){
+                    Text("import ").foregroundColor(.appPink).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/) +
+                    Text("업무를 시작해볼까요?")
+                        .foregroundColor(.white)
+                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    Text("중간에 잠깐 쉬고 걷는 것은 효율에 도움이 돼요.")
+                        .foregroundColor(.white)
+                    Text("걸을때 읽기 좋은 인사이트 보내드릴게요.")
+                        .foregroundColor(.white)
+                }
                 Spacer()
                 HStack{
                     Button("시작하기") {
-//                        router.backToRoot()
+                        //                        router.backToRoot()
                         router.push(.listView)
                     }
                     .padding()
                     .foregroundColor(.white)
-                    .background(Color.green)
+                    .background(Color.accentColor)
                     .cornerRadius(8)
                     .padding()
                     .frame(width: 124, height:56)
                 }
                 
-                
-//                NavigationLink(destination: ListView()
-//                    .environmentObject(notificationManager)
-//                    .environmentObject(router)
-//                               , isActive: $isShowingDetail) {
-//                    EmptyView()
-//                }
-            }
-            .navigationDestination(for: Destination.self){ destination in
-                switch destination{
-                case .listView:
-                    ListView()
-                        .environmentObject(notificationManager)
-                        .environmentObject(router)
-                case .endView:
-                    EndView()
-                        .environmentObject(notificationManager)
-                        .environmentObject(router)
-                case .homeView:
-                    HomeView()
-                        .environmentObject(notificationManager)
-                        .environmentObject(router)
-                        .environmentObject(vm)
-                default:
-                    ListView()
-                        .environmentObject(notificationManager)
-                        .environmentObject(router)
+                .navigationDestination(for: Destination.self){ destination in
+                    switch destination{
+                    case .listView:
+                        ListView()
+                            .environmentObject(notificationManager)
+                            .environmentObject(router)
+                    case .endView:
+                        EndView()
+                            .environmentObject(notificationManager)
+                            .environmentObject(router)
+                    case .homeView:
+                        HomeView()
+                            .environmentObject(notificationManager)
+                            .environmentObject(router)
+                            .environmentObject(vm)
+                    default:
+                        ListView()
+                            .environmentObject(notificationManager)
+                            .environmentObject(router)
+                    }
+                }
+                .onAppear(){
+                    vm.healthRequest()
                 }
             }
 
@@ -80,6 +82,6 @@ struct HomeView: View {
     }
 }
 
-#Preview {
-    HomeView()
-}
+//#Preview {
+//    HomeView()
+//}

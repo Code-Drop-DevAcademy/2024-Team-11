@@ -19,23 +19,9 @@
 <img src="https://github.com/DeveloperAcademy-POSTECH/2024-MC2-M1-PrincessMaker/assets/125838606/f619c38f-b7ad-415b-9323-a23c4da82870" width="200" height="450"/>
 
 
-
-
-## :framed_picture: STOD 실행화면
-<img src="https://github.com/DeveloperAcademy-POSTECH/2024-MC2-M1-PrincessMaker/assets/125838606/20d12b82-4b65-43f9-9616-250e59433f16" width="200" height="450"/>
-<img src="https://github.com/DeveloperAcademy-POSTECH/2024-MC2-M1-PrincessMaker/assets/125838606/d5dabe44-bf3c-4c03-9ac7-3de20fa3a282" width="200" height="450"/>
-<img src="https://github.com/DeveloperAcademy-POSTECH/2024-MC2-M1-PrincessMaker/assets/125838606/783d6f0f-b5f9-4ddb-8d38-d7389e980dd3" width="200" height="450"/>
-<img src="https://github.com/DeveloperAcademy-POSTECH/2024-MC2-M1-PrincessMaker/assets/125838606/086d4a36-0514-40e0-ba1f-57daea9e4ae9" width="200" height="450"/>
-
-
-
-
-
 ## :pushpin: 핵심 기능
 
-- PIP를 통해 다른 앱에서 사이즈를 상시 확인 가능
-- 사이즈 사진 업로드
-- 사이즈 사진 업로드 시 편집 가능
+- 일정 시간 걷지 않으면 
 
 
 ## :sparkles: Skills & Tech Stack
@@ -52,12 +38,3 @@
 
 
 
-
-
-
-|![조스](https://github.com/DeveloperAcademy-POSTECH/2024-MC2-M1-PrincessMaker/assets/87518742/da31e166-6ca2-4ef7-a306-9fd3147eea28)|![나기](https://github.com/DeveloperAcademy-POSTECH/2024-MC2-M1-PrincessMaker/assets/87518742/3e74f117-7b91-479a-9bdd-18672692e070)|![제이미](https://github.com/DeveloperAcademy-POSTECH/2024-MC2-M1-PrincessMaker/assets/87518742/9f51e6b6-7cac-4da2-bbdd-5cd661c4a985)|![소라](https://github.com/DeveloperAcademy-POSTECH/2024-MC2-M1-PrincessMaker/assets/87518742/73fccd7a-205a-4afc-89d7-cd16d060ace8)|![제니스](https://github.com/DeveloperAcademy-POSTECH/2024-MC2-M1-PrincessMaker/assets/87518742/793c7431-535f-4e29-82df-59498899dfb1)|![제인](https://github.com/DeveloperAcademy-POSTECH/2024-MC2-M1-PrincessMaker/assets/87518742/705f3d48-8ab1-444a-a5f5-5474ca2d4faa)|
-|:----:|:----:|:----:|:----:|:----:|:----:|
-|[조스](https://github.com/Cindy7878)|[나기](https://github.com/Naknakk)|[제이미](https://github.com/TakeMos)|[소라](https://github.com/yejinkang1025)|[제니스](https://github.com/zenith0001)|[제인](https://github.com/darongzzang)|
-|등록뷰 개발<br>홈 및 등록뷰 디자인|iOS리드 개발<br>홈 디자인|PIP, 온보딩 개발<br>홈 디자인|전체 디자인 및 브랜딩 영상 제작<br>온보딩 개발|전체 디자인 및 브랜딩 영상 제작<br>런치스크린 개발|SwiftData<br>등록뷰 개발<br>홈 및 등록뷰 디자인|
-
-<br>

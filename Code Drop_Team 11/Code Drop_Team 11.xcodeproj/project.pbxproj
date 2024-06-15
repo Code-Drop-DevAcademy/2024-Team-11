@@ -21,6 +21,7 @@
 		6B7453462C1D062B000C2955 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7453422C1D062B000C2955 /* ListView.swift */; };
 		6B93108A2C1D19CD00A1F361 /* RouterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9310892C1D19CD00A1F361 /* RouterModel.swift */; };
 		6B93108C2C1D1DBB00A1F361 /* EndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B93108B2C1D1DBB00A1F361 /* EndView.swift */; };
+		6B93108E2C1D398600A1F361 /* homeImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B93108D2C1D398600A1F361 /* homeImage.png */; };
 		89937B5C2C1CC06D00ED70E3 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89937B5B2C1CC06D00ED70E3 /* NotificationManager.swift */; };
 		89937B5F2C1CCED800ED70E3 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89937B5E2C1CCED800ED70E3 /* News.swift */; };
 		89937B612C1CCF8000ED70E3 /* AllNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89937B602C1CCF8000ED70E3 /* AllNews.swift */; };
@@ -64,6 +65,7 @@
 		6B7453422C1D062B000C2955 /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		6B9310892C1D19CD00A1F361 /* RouterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterModel.swift; sourceTree = "<group>"; };
 		6B93108B2C1D1DBB00A1F361 /* EndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndView.swift; sourceTree = "<group>"; };
+		6B93108D2C1D398600A1F361 /* homeImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homeImage.png; sourceTree = "<group>"; };
 		89937B5B2C1CC06D00ED70E3 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		89937B5E2C1CCED800ED70E3 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		89937B602C1CCF8000ED70E3 /* AllNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNews.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				6B9310892C1D19CD00A1F361 /* RouterModel.swift */,
+				6B93108D2C1D398600A1F361 /* homeImage.png */,
 				6B7453432C1D062B000C2955 /* Views */,
 				6B7453062C1CB36B000C2955 /* Code Drop_Team 11 */,
 				6B7453172C1CB36C000C2955 /* Code Drop_Team 11Tests */,
@@ -284,6 +287,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B93108E2C1D398600A1F361 /* homeImage.png in Resources */,
 				6B74530F2C1CB36C000C2955 /* Preview Assets.xcassets in Resources */,
 				6B74530C2C1CB36C000C2955 /* Assets.xcassets in Resources */,
 			);

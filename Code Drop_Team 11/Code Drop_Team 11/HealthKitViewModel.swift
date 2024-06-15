@@ -18,6 +18,8 @@ class HealthKitViewModel: ObservableObject {
     @Published var isAuthorized = false
     @Published var needToStand = false
     @Published var sentMoveNotification = false
+    @Published var sentNewsNotification = false
+    @Published var latestNotificationDate = Date()
     
     init() {
         changeAuthorizationStatus()
@@ -82,6 +84,7 @@ class HealthKitViewModel: ObservableObject {
             completion(false)
             return
         }
+        print(startDate)
         healthKitManager.readStepCount(forToday: startDate, healthStore: healthStore) { step in
             let startStep = step
             if startStep < 10 {
@@ -92,13 +95,32 @@ class HealthKitViewModel: ObservableObject {
         }
     }
     
+    func didHit50steps(startDate: Date, completion: @escaping (Bool) -> Void) {
+//        guard let startDate = Calendar.current.date(byAdding: .minute, value: -1, to: Date()) else {
+//            completion(false)
+//            return
+//        }
+        print(startDate)
+        healthKitManager.readStepCount(forToday: startDate, healthStore: healthStore) { step in
+            let startStep = step
+            if startStep > 10 {
+                completion(true)
+            } else {
+                completion(false)
+            }
+        }
+    }
+    
     func checkNeedToStand(){
+        print("check")
         isBeenOneHour(){ result in
+            print("result: \(result)")
             DispatchQueue.main.async{ [self] in
                 self.needToStand = result
                 if result && !sentMoveNotification{
                     notificationManager.moveNotification()
                     sentMoveNotification = true
+                    latestNotificationDate = Date()
                     print("Send: \(sentMoveNotification)")
                 }else if !result{
                     sentMoveNotification = false
@@ -108,4 +130,18 @@ class HealthKitViewModel: ObservableObject {
         }
     }
     
+    func checkGoodJob(){
+        print("good job")
+        didHit50steps(startDate: latestNotificationDate){result in
+            DispatchQueue.main.async{ [self] in
+                if result && !sentNewsNotification{
+                    //send message
+                    notificationManager.newsNotification()
+                    sentMoveNotification = true
+                }else if !result{
+                    sentNewsNotification = false
+                }
+            }
+        }
+    }
 }

@@ -13,10 +13,10 @@
 
 
 ## :fireworks: Screenshots
-<img src="https://ibb.co/nkSz5x6" width="200" height="450"/>
-<img src="https://ibb.co/K223dfq" width="200" height="450"/>
-<img src="https://github.com/DeveloperAcademy-POSTECH/2024-MC2-M1-PrincessMaker/assets/125838606/a919c88d-94ad-4360-bc92-72aa2c50bead" width="200" height="450"/>
-<img src="https://github.com/DeveloperAcademy-POSTECH/2024-MC2-M1-PrincessMaker/assets/125838606/f619c38f-b7ad-415b-9323-a23c4da82870" width="200" height="450"/>
+<a href="https://ibb.co/6Nf0fLg"><img src="https://i.ibb.co/9GCHCSs/image.jpg" alt="image" border="0"></a>
+<a href="https://ibb.co/y82T8n4"><img src="https://i.ibb.co/Vv6yvWw/image.jpg" alt="image" border="0"></a>
+<a href="https://ibb.co/K223dfq"><img src="https://i.ibb.co/5rrfmS8/image.jpg" alt="image" border="0"></a>
+<a href="https://ibb.co/nkSz5x6"><img src="https://i.ibb.co/VB82PfJ/image.jpg" alt="image" border="0"></a>
 
 
 ## :pushpin: 핵심 기능

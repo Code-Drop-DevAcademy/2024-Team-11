@@ -55,8 +55,8 @@ class NotificationManager: ObservableObject {
                     } else {
                         print("Notification scheduled successfully")
                         DispatchQueue.main.async {
-//                            self.todayNews.append(randomNews)
-                            self.modelContext.insert(randomNews)
+                            self.todayNews.append(randomNews)
+//                            self.modelContext.insert(randomNews)
                         }
                     }
                 }

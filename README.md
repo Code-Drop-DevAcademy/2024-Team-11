@@ -11,7 +11,7 @@
 
 
 ## 📝 앱 소개
-<img src="https://postimg.cc/HcMhpzWn" alt="image" width=400>
+<img src="[https://postimg.cc/HcMhpzWn](https://i.postimg.cc/nzSbGS64/temp-Imagej-Upd-CG.avif)" alt="image" width=400>
 <img src="https://postimg.cc/v1kKFksC" alt="image" width=400>
 
 

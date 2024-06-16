@@ -32,8 +32,7 @@
 
 
 ## :people_hugging: Authors
-</div>
-</details>
+Danbi, Jane, Mia, Winter, Yusol
 
 
 

@@ -50,5 +50,8 @@
 Danbi, Jane, Mia, Winter, Yusol
 
 
+## ℹ️ Source
+[명언 리스트 dummydata 수집](https://asana.com/ko/resources/team-motivational-quotes)
 
+[개발 인사이트 dummydata 수집](https://yozm.wishket.com/magazine/list/develop/)
 

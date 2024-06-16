@@ -11,6 +11,8 @@
 
 
 ## 📝 앱 소개
+<img src="https://postimg.cc/HcMhpzWn" alt="image" width=400>
+<img src="https://postimg.cc/v1kKFksC" alt="image" width=400>
 
 
 ## :fireworks: Screenshots
